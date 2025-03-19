@@ -1,16 +1,31 @@
-## Hi there 👋
+**# Welcome to Addex12's GitHub Repository!**  
 
-<!--
-**addex12/addex12** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+## 🚀 About Me
+Hello! I'm **Adugna Gizaw**, an experienced IT Manager, Data Science enthusiast, and Software Developer with a strong background in **IT infrastructure, software development, project management, and AI research**. My work spans **enterprise IT solutions, school ERP systems, and open-source AI projects**. Passionate about innovation and technology, I aim to build high-impact solutions tailored for **Ethiopia and beyond**.
 
-Here are some ideas to get you started:
+I have lots of internationally recognized certificates from **Microsoft, Radware, Citrix, F5, Google, and Arizona State University (TESOL certified)**.
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+## 💡 What You'll Find Here
+This repository serves as the **central hub** for my open-source contributions, research projects, and innovative developments. Here’s what you can explore:
+- **Mela AI** – A cutting-edge learning AI platform.  
+- **Edunova ERP** – A full-fledged school ERP system for managing students, teachers, grading, and admissions.  
+- **Afaan Oromo AI Model** – My contribution to open-source translation and AI in Afaan Oromo.  
+- **Python & AI Projects** – Machine learning models, automation scripts, and real-world solutions.  
+- **Tech Innovations** – Experiments in software and hardware integration.  
+
+## 🌍 My Vision
+I am committed to **leveraging technology** to solve real-world problems, particularly in **education, language processing, and IT infrastructure**. By combining **data science, software engineering, and IT management**, I strive to create impactful solutions.
+
+## 🔧 Tech Stack & Skills
+- **Programming:** Python, Flask, Streamlit, JavaScript, SQL
+- **AI & ML:** LLaMA, NLP, Data Science, Deep Learning
+- **Infrastructure:** Ubuntu, Anaconda, GitHub, IT Networking
+- **Project Management:** Agile, Scrum, ERP Systems
+
+## 📬 Connect with Me
+📧 Email: [adugna.gizaw@flipperschools.com](mailto:adugna.gizaw@flipperschools.com), [gizawadugna@gmail.com](mailto:gizawadugna@gmail.com), [adugna.gsr-1468-17@aau.edu.et](mailto:adugna.gsr-1468-17@aau.edu.et), [asutuma@myfuse.education](mailto:asutuma@myfuse.education)  
+📍 Location: Addis Ababa, Ethiopia  
+🌐 LinkedIn: [linkedin.com/in/eleganceict](https://linkedin.com/in/eleganceict)  
+🔗 GitHub: [github.com/addex12](https://github.com/addex12)  
+
+⭐ **Feel free to fork, contribute, and explore my projects!** Let’s build something amazing together! 🚀
