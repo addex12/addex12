@@ -3,6 +3,11 @@
 ## 🚀 About Me
 Hello! I'm **Adugna Gizaw**, an experienced IT Manager, Data Science enthusiast, and Software Developer with a strong background in **IT infrastructure, software development, project management, and AI research**. My work spans **enterprise IT solutions, school ERP systems, and open-source AI projects**. Passionate about innovation and technology, I aim to build high-impact solutions tailored for **Ethiopia and beyond**.
 
+I am currently pursuing an **MSc in Data Science at Addis Ababa University** and an **MSc in Project Management at Florida University**.
+
+I have lots of internationally recognized certificates from **Microsoft, Radware, Citrix, F5, Google, and Arizona State University (TESOL certified)**.
+Hello! I'm **Adugna Gizaw**, an experienced IT Manager, Data Science enthusiast, and Software Developer with a strong background in **IT infrastructure, software development, project management, and AI research**. My work spans **enterprise IT solutions, school ERP systems, and open-source AI projects**. Passionate about innovation and technology, I aim to build high-impact solutions tailored for **Ethiopia and beyond**.
+
 I have lots of internationally recognized certificates from **Microsoft, Radware, Citrix, F5, Google, and Arizona State University (TESOL certified)**.
 
 ## 💡 What You'll Find Here
