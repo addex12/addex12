@@ -13,7 +13,7 @@ I have lots of internationally recognized certificates from **Microsoft, Radware
 ## 💡 What You'll Find Here
 This repository serves as the **central hub** for my open-source contributions, research projects, and innovative developments. Here’s what you can explore:
 - **Edunova ERP** – A full-fledged school ERP system for managing students, teachers, grading, and admissions.  
-- **Afaan Oromo AI Model** – My contribution to open-source translation and AI in Afaan Oromo.  
+- **School CRM** – FUlly Fledged School CRM.  
 - **Python & AI Projects** – Machine learning models, automation scripts, and real-world solutions.  
 - **Tech Innovations** – Experiments in software and hardware integration.  
 
