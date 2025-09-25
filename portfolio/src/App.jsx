@@ -10,20 +10,48 @@ import Stats from './components/Stats';
 import Testimonials from './components/Testimonials';
 
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
 import { PROFILE, WORK_EXPERIENCE, EDUCATION, LANGUAGES_LIST, CERTIFICATES, SKILLS, OTHER_SKILLS, CERTIFICATIONS, TESTIMONIALS, PROJECTS, BLOGS, STATS, LANGUAGES } from './data/profileData';
+import ScrollProgress from './components/ScrollProgress';
 
 
 function App() {
   const [filter, setFilter] = useState('All');
   const [dark, setDark] = useState(false);
   const [lang, setLang] = useState('en');
+  const [showTop, setShowTop] = useState(false);
+
+  useEffect(() => {
+    const storedTheme = window.localStorage.getItem('portfolio-theme');
+    if (storedTheme === 'dark') {
+      setDark(true);
+    }
+  }, []);
+
+  useEffect(() => {
+    document.body.classList.toggle('dark-theme', dark);
+    window.localStorage.setItem('portfolio-theme', dark ? 'dark' : 'light');
+  }, [dark]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowTop(window.scrollY > 420);
+    };
+
+    handleScroll();
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
 
   // Smooth scroll
   const scrollTo = (id) => {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const handleScrollTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   // Filtered projects for project section
@@ -32,7 +60,9 @@ function App() {
     : PROJECTS.filter(p => p.category === filter);
 
   return (
-    <div className={`portfolio-container${dark ? ' dark' : ''}`}>
+    <>
+      <ScrollProgress />
+      <div className={`portfolio-container${dark ? ' dark' : ''}`}>
       <header className="portfolio-header">
         <div className="header-row">
           <h1>{PROFILE.name}</h1>
@@ -236,6 +266,17 @@ function App() {
         <p>⭐ Open to international opportunities, relocation, and visa sponsorship. Let’s build something amazing together! 🚀</p>
       </footer>
     </div>
+      {showTop && (
+        <button
+          type="button"
+          className="back-to-top"
+          onClick={handleScrollTop}
+          aria-label="Scroll back to top"
+        >
+          ↑
+        </button>
+      )}
+    </>
   );
 }
 

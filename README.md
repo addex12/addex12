@@ -73,13 +73,13 @@
 
 ## 🔧 Core Skills
 
-**Technical:**  
+**Technical:**
 Cybersecurity, Data Analytics, ERP Systems, Sage 300, Odoo, Quick-books, Sage, Peachtree, Cloud Solutions, Server Management, Network Security, Asset Management, CRM Systems, Contract Negotiation
 
-**Operations:**  
+**Operations:**
 Budgeting, Procurement, Team Management, Shift Scheduling, Inventory Management, Project Management, IBM, MS Project, Jira, Monday, Contract Negotiation
 
-**Soft Skills:**  
+**Soft Skills:**
 Leadership, Team Collaboration, Problem Solving, Communication
 
 ---
@@ -88,15 +88,15 @@ Leadership, Team Collaboration, Problem Solving, Communication
 
 **My contributions have delivered measurable results in productivity and cost reduction:**
 
-| Area                  | Impact Description                                 | Value/Percentage                |
-|-----------------------|----------------------------------------------------|---------------------------------|
-| Productivity Increase | Boosted team and process productivity              | ![98%](https://img.shields.io/badge/Productivity%20Increase-98%25-brightgreen?style=flat-square) |
-| Cost Reduction        | Reduced operational and IT costs                    | ![92%](https://img.shields.io/badge/Cost%20Reduction-92%25-blue?style=flat-square) |
-| Asset Management      | Improved asset utilization and tracking             | ![92%](https://img.shields.io/badge/Asset%20Management-92%25-blueviolet?style=flat-square) |
-| Team Management       | Enhanced team efficiency and collaboration          | ![98%](https://img.shields.io/badge/Team%20Management-98%25-blue?style=flat-square) |
-| Budgeting             | Optimized budgeting and resource allocation         | ![95%](https://img.shields.io/badge/Budgeting-95%25-brightgreen?style=flat-square) |
-| Procurement           | Streamlined procurement processes                   | ![90%](https://img.shields.io/badge/Procurement-90%25-green?style=flat-square) |
-| Contract Negotiation  | Achieved favorable contract terms                   | ![88%](https://img.shields.io/badge/Contract%20Negotiation-88%25-orange?style=flat-square) |
+| Area                  | Impact Description                          | Value/Percentage                                                                               |
+| --------------------- | ------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| Productivity Increase | Boosted team and process productivity       | ![98%](https://img.shields.io/badge/Productivity%20Increase-98%25-brightgreen?style=flat-square) |
+| Cost Reduction        | Reduced operational and IT costs            | ![92%](https://img.shields.io/badge/Cost%20Reduction-92%25-blue?style=flat-square)               |
+| Asset Management      | Improved asset utilization and tracking     | ![92%](https://img.shields.io/badge/Asset%20Management-92%25-blueviolet?style=flat-square)       |
+| Team Management       | Enhanced team efficiency and collaboration  | ![98%](https://img.shields.io/badge/Team%20Management-98%25-blue?style=flat-square)              |
+| Budgeting             | Optimized budgeting and resource allocation | ![95%](https://img.shields.io/badge/Budgeting-95%25-brightgreen?style=flat-square)               |
+| Procurement           | Streamlined procurement processes           | ![90%](https://img.shields.io/badge/Procurement-90%25-green?style=flat-square)                   |
+| Contract Negotiation  | Achieved favorable contract terms           | ![88%](https://img.shields.io/badge/Contract%20Negotiation-88%25-orange?style=flat-square)       |
 
 ---
 
@@ -110,9 +110,9 @@ Leadership, Team Collaboration, Problem Solving, Communication
 
 ## 📬 Contact
 
-| Emails                                                                                                                                                                                                                                                                  | Phone Numbers                                                                                 |
-| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |----------------------------------------------------------------------------------------------|
-| [gizawadugna@gmail.com](mailto:gizawadugna@gmail.com),<br />[adugna.gizaw@flipperschools.com](mailto:adugna.gizaw@flipperschools.com),<br />[adugna.gsr-1468-17@aau.edu.et](mailto:adugna.gsr-1468-17@aau.edu.et),<br />[asutuma@myfuse.education](mailto:asutuma@myfuse.education) | [\+251911144168](tel:+251911144168) / [\+251925582067](tel:+251925582067)                     |
+| Emails                                                                                                                                                                                                                                                                  | Phone Numbers                                                         |
+| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------- |
+| [gizawadugna@gmail.com](mailto:gizawadugna@gmail.com),<br />[adugna.gizaw@flipperschools.com](mailto:adugna.gizaw@flipperschools.com),<br />[adugna.gsr-1468-17@aau.edu.et](mailto:adugna.gsr-1468-17@aau.edu.et),<br />[asutuma@myfuse.education](mailto:asutuma@myfuse.education) | [+251911144168](tel:+251911144168) <br />[+251925582067](tel:+251925582067) |
 
 ---
 
