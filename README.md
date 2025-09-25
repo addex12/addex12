@@ -51,12 +51,15 @@
 
 ## 🔧 Tech Stack & Skills
 
-- **Programming:** Python, JavaScript, SQL, Flask, Streamlit
-- **AI & ML:** Data Science, Deep Learning, NLP, LLaMA
-- **ERP/CRM:** Sage 300, Odoo, Quick-books, Peachtree
-- **Infrastructure:** Ubuntu, Anaconda, GitHub, IT Networking, Server Management, Cloud Solutions
-- **Project Management:** Agile, Scrum, Jira, Monday, MS Project
-- **Other:** Budgeting, Procurement, Team Management, Asset Management, Contract Negotiation
+**Other:**
+
+| Skill                 | Proficiency |
+|-----------------------|:-----------:|
+| ![Budgeting](https://img.shields.io/badge/Budgeting-95%25-brightgreen?style=flat-square)               | 95%         |
+| ![Procurement](https://img.shields.io/badge/Procurement-90%25-green?style=flat-square)                 | 90%         |
+| ![Team Management](https://img.shields.io/badge/Team%20Management-98%25-blue?style=flat-square)        | 98%         |
+| ![Asset Management](https://img.shields.io/badge/Asset%20Management-92%25-blueviolet?style=flat-square)| 92%         |
+| ![Contract Negotiation](https://img.shields.io/badge/Contract%20Negotiation-88%25-orange?style=flat-square)| 88%     |
 
 ## 🌍 Languages
 

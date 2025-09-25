@@ -12,7 +12,7 @@ import Testimonials from './components/Testimonials';
 
 import { useState } from 'react';
 import './App.css';
-import { PROFILE, WORK_EXPERIENCE, EDUCATION, LANGUAGES_LIST, CERTIFICATES, SKILLS, CERTIFICATIONS, TESTIMONIALS, PROJECTS, BLOGS, STATS, LANGUAGES } from './data/profileData';
+import { PROFILE, WORK_EXPERIENCE, EDUCATION, LANGUAGES_LIST, CERTIFICATES, SKILLS, OTHER_SKILLS, CERTIFICATIONS, TESTIMONIALS, PROJECTS, BLOGS, STATS, LANGUAGES } from './data/profileData';
 
 
 function App() {
@@ -67,7 +67,7 @@ function App() {
       <Experience experience={WORK_EXPERIENCE} />
       <Education education={EDUCATION} />
       <Languages languages={LANGUAGES_LIST} />
-      <Skills skills={SKILLS} />
+  <Skills skills={SKILLS} otherSkills={OTHER_SKILLS} />
       <Certifications certifications={CERTIFICATIONS} certificates={CERTIFICATES} />
       <Stats stats={STATS} />
       <Projects projects={PROJECTS} filter={filter} setFilter={setFilter} />

@@ -112,6 +112,15 @@ export const SKILLS = [
   { name: 'IT Infrastructure', level: 92 },
 ];
 
+// Additional soft/management skills for interactive progress bars
+export const OTHER_SKILLS = [
+  { name: 'Budgeting', level: 95 },
+  { name: 'Procurement', level: 90 },
+  { name: 'Team Management', level: 98 },
+  { name: 'Asset Management', level: 92 },
+  { name: 'Contract Negotiation', level: 88 },
+];
+
 export const CERTIFICATIONS = [
   { name: 'Microsoft', logo: 'https://img.shields.io/badge/Microsoft-0078D4?logo=microsoft&logoColor=white&style=flat' },
   { name: 'Google', logo: 'https://img.shields.io/badge/Google-4285F4?logo=google&logoColor=white&style=flat' },
