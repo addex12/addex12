@@ -1,10 +1,17 @@
 # � Adugna Gizaw — International Portfolio & Open Source Hub
 
 [![Portfolio](https://img.shields.io/badge/Portfolio-Live-blue?style=for-the-badge&logo=react)](https://orbalia.pythonanywhere.com)
+
+
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/eleganceict)
+
+
 [![LinkedIn Followers](https://img.shields.io/badge/LinkedIn%20Followers-1610-blue?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/eleganceict)
 
+
 [![Credly](https://img.shields.io/badge/Credly-Certified-orange?style=for-the-badge&logo=credly)](https://www.credly.com/users/adugnagizaw)
+
+
 [![GitHub Followers](https://img.shields.io/github/followers/addex12?style=for-the-badge)](https://github.com/addex12)
 [![Location](https://img.shields.io/badge/Location-Open%20to%20Relocate%20%26%20Visa%20Sponsorship-green?style=for-the-badge)](#relocation)
 
@@ -53,13 +60,13 @@
 
 **Other:**
 
-| Skill                 | Proficiency |
-|-----------------------|:-----------:|
-| ![Budgeting](https://img.shields.io/badge/Budgeting-95%25-brightgreen?style=flat-square)               | 95%         |
-| ![Procurement](https://img.shields.io/badge/Procurement-90%25-green?style=flat-square)                 | 90%         |
-| ![Team Management](https://img.shields.io/badge/Team%20Management-98%25-blue?style=flat-square)        | 98%         |
-| ![Asset Management](https://img.shields.io/badge/Asset%20Management-92%25-blueviolet?style=flat-square)| 92%         |
-| ![Contract Negotiation](https://img.shields.io/badge/Contract%20Negotiation-88%25-orange?style=flat-square)| 88%     |
+| Skill                                                                                                     | Proficiency |
+| --------------------------------------------------------------------------------------------------------- | :---------: |
+| ![Budgeting](https://img.shields.io/badge/Budgeting-95%25-brightgreen?style=flat-square)                    |     95%     |
+| ![Procurement](https://img.shields.io/badge/Procurement-90%25-green?style=flat-square)                      |     90%     |
+| ![Team Management](https://img.shields.io/badge/Team%20Management-98%25-blue?style=flat-square)             |     98%     |
+| ![Asset Management](https://img.shields.io/badge/Asset%20Management-92%25-blueviolet?style=flat-square)     |     92%     |
+| ![Contract Negotiation](https://img.shields.io/badge/Contract%20Negotiation-88%25-orange?style=flat-square) |     88%     |
 
 ## 🌍 Languages
 
@@ -69,9 +76,9 @@
 
 ## 📬 Contact
 
-| Email                                                                                                                                                                                                                                                                            | Website                                                       | Credly                                                                | Location                                                                                                      | LinkedIn                                                        | GitHub                                        |
-| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------- | --------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------- |
-| [adugna.gizaw@flipperschools.com](mailto:adugna.gizaw@flipperschools.com) `<br>` [gizawadugna@gmail.com](mailto:gizawadugna@gmail.com) `<br>` [adugna.gsr-1468-17@aau.edu.et](mailto:adugna.gsr-1468-17@aau.edu.et) `<br>` [asutuma@myfuse.education](mailto:asutuma@myfuse.education) | [orbalia.pythonanywhere.com](https://orbalia.pythonanywhere.com) | [credly.com/users/adugnagizaw](https://www.credly.com/users/adugnagizaw) | Addis Ababa, Ethiopia`<br>` `<span id="relocation">`🌍 `<b>`Open to Relocate & Visa Sponsorship`</b>` | [linkedin.com/in/eleganceict](https://linkedin.com/in/eleganceict) | [github.com/addex12](https://github.com/addex12) |
+| Email                                                                                                                                                                                                                                                                            | Website                                                       | Credly                                                                | Location                                                                                                        | LinkedIn                                                        | GitHub                                        |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------- |
+| [adugna.gizaw@flipperschools.com](mailto:adugna.gizaw@flipperschools.com) `<br>` [gizawadugna@gmail.com](mailto:gizawadugna@gmail.com) `<br>` [adugna.gsr-1468-17@aau.edu.et](mailto:adugna.gsr-1468-17@aau.edu.et) `<br>` [asutuma@myfuse.education](mailto:asutuma@myfuse.education) | [orbalia.pythonanywhere.com](https://orbalia.pythonanywhere.com) | [credly.com/users/adugnagizaw](https://www.credly.com/users/adugnagizaw) | Addis Ababa, Ethiopia `<br>` `<span id="relocation">`🌍 `<b>`Open to Relocate & Visa Sponsorship `</b>` | [linkedin.com/in/eleganceict](https://linkedin.com/in/eleganceict) | [github.com/addex12](https://github.com/addex12) |
 
 ---
 
@@ -135,9 +142,9 @@ I am committed to **leveraging technology** to solve real-world problems, partic
 
 ## 📬 Connect with Me
 
-| Email                                                                                                                                                                                                                                                                            | Location                                                                                                      | LinkedIn                                                        | GitHub                                        |
-| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------- |
-| [adugna.gizaw@flipperschools.com](mailto:adugna.gizaw@flipperschools.com) `<br>` [gizawadugna@gmail.com](mailto:gizawadugna@gmail.com) `<br>` [adugna.gsr-1468-17@aau.edu.et](mailto:adugna.gsr-1468-17@aau.edu.et) `<br>` [asutuma@myfuse.education](mailto:asutuma@myfuse.education) | Addis Ababa, Ethiopia`<br>` `<span id="relocation">`� `<b>`Open to Relocate & Visa Sponsorship`</b>` | [linkedin.com/in/eleganceict](https://linkedin.com/in/eleganceict) | [github.com/addex12](https://github.com/addex12) |
+| Email                                                                                                                                                                                                                                                                            | Location                                                                                                        | LinkedIn                                                        | GitHub                                        |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------- |
+| [adugna.gizaw@flipperschools.com](mailto:adugna.gizaw@flipperschools.com) `<br>` [gizawadugna@gmail.com](mailto:gizawadugna@gmail.com) `<br>` [adugna.gsr-1468-17@aau.edu.et](mailto:adugna.gsr-1468-17@aau.edu.et) `<br>` [asutuma@myfuse.education](mailto:asutuma@myfuse.education) | Addis Ababa, Ethiopia `<br>` `<span id="relocation">`� `<b>`Open to Relocate & Visa Sponsorship `</b>` | [linkedin.com/in/eleganceict](https://linkedin.com/in/eleganceict) | [github.com/addex12](https://github.com/addex12) |
 
 ---
 
