@@ -12,7 +12,7 @@
 [![Credly](https://img.shields.io/badge/Credly-Certified-orange?style=for-the-badge&logo=credly)](https://www.credly.com/users/adugnagizaw)
 
 
-[![GitHub Followers](https://img.shields.io/github/followers/addex12?style=for-the-badge)](https://github.com/addex12)
+
 [![Location](https://img.shields.io/badge/Location-Open%20to%20Relocate%20%26%20Visa%20Sponsorship-green?style=for-the-badge)](#relocation)
 
 ---
