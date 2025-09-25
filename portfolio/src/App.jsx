@@ -23,6 +23,7 @@ import {
   LANGUAGES
 } from './data/profileData';
 import ScrollProgress from './components/ScrollProgress';
+import ResumeATS from './components/ResumeATS.jsx'
 
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
   const [dark, setDark] = useState(false);
   const [lang, setLang] = useState('en');
   const [showTop, setShowTop] = useState(false);
+  const [showATS, setShowATS] = useState(false) // NEW
 
   // NEW state for revamped sections
   const [aboutExpanded, setAboutExpanded] = useState(false);
@@ -37,6 +39,7 @@ function App() {
   const [expOpenAll, setExpOpenAll] = useState(false);
   const [skillCategory, setSkillCategory] = useState('technical'); // technical | other
   const [skillSearch, setSkillSearch] = useState('');
+  const [activeId, setActiveId] = useState('about'); // NEW
 
   // Theme initialization
   useEffect(() => {
@@ -77,9 +80,41 @@ function App() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const scrollTo = (id) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+  // Scroll spy (NEW)
+  useEffect(() => {
+    const targets = Array.from(document.querySelectorAll('[data-nav-target]'));
+    if (!targets.length) return;
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(e => {
+          if (e.isIntersecting) setActiveId(e.target.id);
+        });
+      },
+      { rootMargin: '-50% 0px -49% 0px', threshold: 0 }
+    );
+    targets.forEach(t => observer.observe(t));
+    return () => observer.disconnect();
+  }, []);
+
+  // Highlight helper (NEW)
+  const highlight = (id) => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.classList.add('flash-anchor');
+    setTimeout(() => el.classList.remove('flash-anchor'), 900);
   };
+
+  // Updated scrollTo with dynamic header offset + highlight
+  const scrollTo = (id) => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    const headerH = document.querySelector('.portfolio-header')?.offsetHeight || 0;
+    const y = el.getBoundingClientRect().top + window.pageYOffset - (headerH + 10);
+    window.scrollTo({ top: y, behavior: 'smooth' });
+    highlight(id);
+  };
+
+  // ADD: missing back-to-top handler (prevents "handleScrollTop is not defined")
   const handleScrollTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
 
   // SAFE GUARDS
@@ -130,274 +165,176 @@ function App() {
   // Safe fallbacks
   const certificateCount = (statsSafe && statsSafe.certificates) ? statsSafe.certificates : coreSkills.length || '—';
 
-  return (
-    <>
-      <ScrollProgress />
-      <div className={`portfolio-container${dark ? ' dark' : ''}`}>
-        <header className="portfolio-header">
-          <div className="header-row">
-            <h1>{profileSafe.name}</h1>
-            <div className="header-actions">
-              <button className="dark-toggle" onClick={() => setDark(d => !d)} title="Toggle dark mode">{dark ? '🌙' : '☀️'}</button>
-              <select className="lang-switch" value={lang} onChange={e => setLang(e.target.value)} title="Switch language">
-                {LANGUAGES.map(l => <option key={l.code} value={l.code}>{l.label}</option>)}
-              </select>
-            </div>
-          </div>
-            <h2>{profileSafe.title}</h2>
-          <p className="relocation-banner">🌍 Open to Relocate & Visa Sponsorship Worldwide</p>
-          <nav>
-            <a href="#about" onClick={e => { e.preventDefault(); scrollTo('about'); }}>About</a>
-            <a href="#workexp" onClick={e => { e.preventDefault(); scrollTo('workexp'); }}>Experience</a>
-            <a href="#education" onClick={e => { e.preventDefault(); scrollTo('education'); }}>Education</a>
-            <a href="#languages" onClick={e => { e.preventDefault(); scrollTo('languages'); }}>Languages</a>
-            <a href="#skills" onClick={e => { e.preventDefault(); scrollTo('skills'); }}>Skills</a>
-            <a href="#certs" onClick={e => { e.preventDefault(); scrollTo('certs'); }}>Certifications</a>
-            <a href="#stats" onClick={e => { e.preventDefault(); scrollTo('stats'); }}>Stats</a>
-            <a href="#projects" onClick={e => { e.preventDefault(); scrollTo('projects'); }}>Projects</a>
-            <a href="#testimonials" onClick={e => { e.preventDefault(); scrollTo('testimonials'); }}>Testimonials</a>
-            <a href="#blog" onClick={e => { e.preventDefault(); scrollTo('blog'); }}>Blog</a>
-            <a href="#contact" onClick={e => { e.preventDefault(); scrollTo('contact'); }}>Contact</a>
-          </nav>
-          <div className="social-icons">
-            {links.linkedin && (
-              <a href={links.linkedin} target="_blank" rel="noopener noreferrer" title="LinkedIn">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn" height="28" />
-              </a>
-            )}
-            <a href="https://github.com/addex12" target="_blank" rel="noopener noreferrer" title="GitHub">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" height="28" />
-            </a>
-          </div>
-        </header>
+  const buildPlainText = () => {
+    const lines = []
+    lines.push(profileSafe.name, profileSafe.title, '')
+    lines.push('SUMMARY')
+    lines.push(summary, '')
+    lines.push('CORE SKILLS')
+    lines.push(coreSkills.join('; '), '')
+    lines.push('EXPERIENCE')
+    filteredExperience.slice(0, 6).forEach(e => {
+      lines.push(`${e.title} – ${e.org}`)
+      ;(e.bullets||[]).slice(0,5).forEach(b => lines.push('- ' + b))
+    })
+    lines.push('', 'CERTIFICATIONS')
+    lines.push(certs.slice(0,12).map(c => c.name||c.title).join('; '))
+    lines.push('', 'EDUCATION')
+    eduData.forEach(ed => lines.push(`${ed.degree} – ${ed.school}`))
+    lines.push('', 'LANGUAGES')
+    lines.push(langList.map(l => `${l.name} (${l.level})`).join('; '))
+    lines.push('', 'CONTACT')
+    // CHANGED: prefer gmail first
+    const primaryEmail = 'gizawadugna@gmail.com'
+    const secondaryEmail = profileSafe.email && profileSafe.email !== primaryEmail ? profileSafe.email : 'adugna.gizaw@flipperschools.com'
+    lines.push('Email: ' + primaryEmail + (secondaryEmail ? ' | ' + secondaryEmail : ''))
+    lines.push('LinkedIn: ' + (links.linkedin||''))
+    lines.push('GitHub: github.com/addex12')
+    return lines.join('\n')
+  }
 
-        {/* ===== Revamped About Section ===== */}
-        <section id="about" style={sectionStyle}>
-          <header style={sectionHeader}>
-            <h3 style={sectionTitle}>About Me</h3>
-            <button style={ghostBtn} onClick={() => setAboutExpanded(a => !a)} aria-expanded={aboutExpanded}>
-              {aboutExpanded ? 'Show Less' : 'Read More'}
-            </button>
-          </header>
-          <div style={aboutGrid}>
-            <div style={aboutMain}>
-              <p style={{ marginTop: 0 }}>
-                {summary.slice(0, aboutExpanded ? summary.length : 230)}
-                {summary.length > 230 && !aboutExpanded && '...'}
-              </p>
-              {aboutExpanded && (
-                <ul style={inlineList}>
-                  {coreSkills.slice(0, 8).map((s, i) => (
-                    <li key={i} style={pill}>{s}</li>
-                  ))}
-                </ul>
-              )}
-              <div style={{ marginTop: '1rem', display: 'flex', gap: '.5rem', flexWrap: 'wrap' }}>
-                {links.website && <a href={links.website} target="_blank" rel="noopener" style={primaryBtn}>Portfolio</a>}
-                {links.linkedin && <a href={links.linkedin} target="_blank" rel="noopener" style={outlineBtn}>LinkedIn</a>}
-                {links.credly && <a href={links.credly} target="_blank" rel="noopener" style={outlineBtn}>Credly</a>}
-              </div>
-            </div>
-            <aside style={aboutAside}>
-              <h4 style={{ margin: '0 0 .75rem' }}>Quick Snapshot</h4>
-              <ul style={factList}>
-                <li><b>Experience:</b> {profileSafe.years || '9+'} yrs</li>
-                <li><b>Focus:</b> IT Ops, Data, Transformation</li>
-                <li><b>Location:</b> Addis Ababa (Global-ready)</li>
-                <li><b>Open To:</b> Relocation / Sponsorship</li>
-                <li><b>Certs:</b> {certificateCount}+</li>
-              </ul>
-            </aside>
-          </div>
-        </section>
+  const downloadTxt = () => {
+    const blob = new Blob([buildPlainText()], { type: 'text/plain' })
+    const url = URL.createObjectURL(blob)
+    const a = document.createElement('a')
+    a.href = url
+    a.download = 'Adugna_Gizaw_ATS_Resume.txt'
+    a.click()
+    URL.revokeObjectURL(url)
+  }
 
-        {/* ===== Revamped Experience Section ===== */}
-        <section id="workexp" style={sectionStyle}>
-          <header style={sectionHeader}>
-            <h3 style={sectionTitle}>Experience</h3>
-            <div style={{ display: 'flex', gap: '.5rem', flexWrap: 'wrap' }}>
-              <input
-                aria-label="Filter experience"
-                placeholder="Filter (role, org, keyword)..."
-                value={expFilter}
-                onChange={e => setExpFilter(e.target.value)}
-                style={input}
-              />
-              <button
-                style={ghostBtn}
-                onClick={() => setExpOpenAll(o => !o)}
-              >
-                {expOpenAll ? 'Collapse All' : 'Expand All'}
-              </button>
-            </div>
-          </header>
-          <div style={{ display: 'grid', gap: '1rem' }}>
-            {filteredExperience.map((job, idx) => (
-              <ExperienceAccordion
-                key={idx}
-                job={job}
-                forceOpen={expOpenAll}
-                index={idx}
-              />
-            ))}
-            {!filteredExperience.length && (
-              <em style={{ opacity: .6 }}>No matching roles.</em>
-            )}
-          </div>
-        </section>
+  const printPDF = () => {
+    // Open minimal window with plain text for browser Print to PDF
+    const win = window.open('', '_blank', 'noopener,noreferrer')
+    if (!win) return
+    const safeText = buildPlainText()
+      .replace(/&/g,'&amp;').replace(/</g,'&lt;')
+      .replace(/\n/g,'<br/>')
+    win.document.write(`
+      <html><head><title>Resume - Adugna Gizaw</title>
+      <style>
+        body{font:12px/1.4 system-ui,Arial,sans-serif;padding:24px;max-width:800px;margin:0 auto;white-space:normal;}
+        h1{margin:0 0 4px;font-size:20px;}
+        h2{margin:16px 0 4px;font-size:13px;text-transform:uppercase;letter-spacing:1px;}
+        hr{margin:12px 0;border:none;border-top:1px solid #999;}
+      </style>
+      </head><body>
+      <h1>${profileSafe.name||''}</h1>
+      <div>${safeText}</div>
+      <script>window.print();</script>
+      </body></html>
+    `)
+    win.document.close()
+  }
 
-        {/* ===== Revamped Skills Section ===== */}
-        <section id="skills" style={sectionStyle}>
-          <header style={sectionHeader}>
-            <h3 style={sectionTitle}>Core Skills</h3>
-            <div style={{ display: 'flex', gap: '.5rem', flexWrap: 'wrap' }}>
-              <input
-                aria-label="Search skills"
-                placeholder="Search skills..."
-                value={skillSearch}
-                onChange={e => setSkillSearch(e.target.value)}
-                style={input}
-              />
-              <div style={tabGroup}>
-                <button
-                  style={skillCategory === 'technical' ? tabActive : tab}
-                  onClick={() => setSkillCategory('technical')}
-                >Technical</button>
-                <button
-                  style={skillCategory === 'other' ? tabActive : tab}
-                  onClick={() => setSkillCategory('other')}
-                >Other</button>
-              </div>
-            </div>
-          </header>
+  // ...existing JSX above...
 
-          {skillCategory === 'technical' && (
-            <div style={{ display: 'grid', gap: '.85rem' }}>
-              {technicalSkills.map((s, i) => (
-                <SkillBar key={s.name + i} name={s.name} level={s.level} />
-              ))}
-              {!technicalSkills.length && <em style={{ opacity: .6 }}>No skills match.</em>}
-            </div>
-          )}
+  {/* OLD resume section replaced */}
+  <section id="resume" data-nav-target className="portfolio-section">
+    <h3>Resume</h3>
+    <p style={{fontSize:'.75rem',opacity:.8,marginTop:'.2rem'}}>
+      Multiple export options for ATS, manual review, or PDF.
+    </p>
+    <div style={{display:'flex',flexWrap:'wrap',gap:'.6rem',margin:'1rem 0 1.2rem'}}>
+      <button className="resume-btn" onClick={downloadTxt}>Download Plain Text</button>
+      <button className="resume-btn" onClick={printPDF}>Generate / Print PDF</button>
+      <button className="resume-btn" onClick={() => setShowATS(s=>!s)}>
+        {showATS ? 'Hide ATS Preview' : 'Show ATS Preview'}
+      </button>
+      <a className="resume-btn" href="/resume-ats.txt" target="_blank" rel="noopener">
+        Open Raw Text
+      </a>
+    </div>
+    <ResumeATS collapsed={!showATS} />
+  </section>
 
-          {skillCategory === 'other' && (
-            <div style={{ display: 'flex', gap: '.5rem', flexWrap: 'wrap' }}>
-              {normalizedOtherSkills.map((s, i) => (
-                <span key={s + i} style={pill}>{s}</span>
-              ))}
-              {!normalizedOtherSkills.length && <em style={{ opacity: .6 }}>No skills match.</em>}
-            </div>
-          )}
-        </section>
+  {/* Resume & Contact already have ids */}
+  <section id="contact" data-nav-target className="portfolio-section">
+    <h3>Contact</h3>
+    <ul>
+      {/* Reordered: gmail first */}
+      <li>Email: <span className="copy-email" onClick={() => navigator.clipboard.writeText('gizawadugna@gmail.com')} title="Copy email">gizawadugna@gmail.com 📋</span></li>
+      <li>Email: <span className="copy-email" onClick={() => navigator.clipboard.writeText('adugna.gizaw@flipperschools.com')} title="Copy email">adugna.gizaw@flipperschools.com 📋</span></li>
+      <li>Location: Addis Ababa, Ethiopia</li>
+      <li>LinkedIn: {links.linkedin ? <a href={links.linkedin} target="_blank" rel="noopener noreferrer">{links.linkedin.replace(/^https?:\/\//,'')}</a> : '—'}</li>
+      <li>GitHub: <a href="https://github.com/addex12" target="_blank" rel="noopener noreferrer">github.com/addex12</a></li>
+    </ul>
+    <p>
+      <a className="resume-btn" href="mailto:adugna.gizaw@flipperschools.com?subject=Contact%20from%20Portfolio">
+        Contact Me
+      </a>
+    </p>
+  </section>
 
-        {/* ===== Existing sections kept intact ===== */}
-        <Education education={eduData} />
-        <Languages languages={langList} />
-        <Certifications certifications={certs} certificates={certNames} />
-        <Stats stats={statsSafe} />
-        <Projects projects={projects} filter={filter} setFilter={setFilter} />
-        <Testimonials testimonials={testimonials} />
-        <Blog blogs={blogs} />
+  <footer className="portfolio-footer">
+    <p>⭐ Open to international opportunities, relocation, and visa sponsorship. Let’s build something amazing together! 🚀</p>
+  </footer>
+</div>
 
-        {/* Unique sections */}
-        <section id="resume" className="portfolio-section">
-          <h3>Resume</h3>
-          <p>
-            <a className="resume-btn" href="/resume.pdf" download>
-              Download Resume (PDF)
-            </a>{' '}
-            or connect on{' '}
-            <a href="https://linkedin.com/in/eleganceict" target="_blank" rel="noopener noreferrer">
-              LinkedIn
-            </a>.
-          </p>
-        </section>
-
-        <section id="contact" className="portfolio-section">
-          <h3>Contact</h3>
-          <ul>
-            <li>Email: <span className="copy-email" onClick={() => navigator.clipboard.writeText('adugna.gizaw@flipperschools.com')} title="Copy email">adugna.gizaw@flipperschools.com 📋</span></li>
-            <li>Email: <span className="copy-email" onClick={() => navigator.clipboard.writeText('gizawadugna@gmail.com')} title="Copy email">gizawadugna@gmail.com 📋</span></li>
-            <li>Location: Addis Ababa, Ethiopia</li>
-            <li>LinkedIn: {links.linkedin ? <a href={links.linkedin} target="_blank" rel="noopener noreferrer">{links.linkedin.replace(/^https?:\/\//,'')}</a> : '—'}</li>
-            <li>GitHub: <a href="https://github.com/addex12" target="_blank" rel="noopener noreferrer">github.com/addex12</a></li>
-          </ul>
-          <p>
-            <a className="resume-btn" href="mailto:adugna.gizaw@flipperschools.com?subject=Contact%20from%20Portfolio">
-              Contact Me
-            </a>
-          </p>
-        </section>
-
-        <footer className="portfolio-footer">
-          <p>⭐ Open to international opportunities, relocation, and visa sponsorship. Let’s build something amazing together! 🚀</p>
-        </footer>
-      </div>
-
-      {showTop && (
-        <button
-          type="button"
-          className="back-to-top"
-          onClick={handleScrollTop}
-          aria-label="Scroll back to top"
-        >
-          ↑
-        </button>
-      )}
-    </>
-  );
+{showTop && (
+  <button
+    type="button"
+    className="back-to-top"
+    onClick={handleScrollTop}
+    aria-label="Scroll back to top"
+  >
+    ↑
+  </button>
+)}
+</>
+);
 }
 
 /* ===== Helper Components (inline for this revamp) ===== */
 function ExperienceAccordion({ job, forceOpen, index }) {
-  const [open, setOpen] = useState(false);
-  const isOpen = forceOpen || open;
-  return (
-    <div style={expCard}>
-      <button
-        onClick={() => setOpen(o => !o)}
-        aria-expanded={isOpen}
-        style={expHeader}
-      >
-        <div style={{ textAlign: 'left' }}>
-          <strong>{job.title}</strong>
-          <div style={{ fontSize: '.7rem', opacity: .75 }}>{job.org} • {job.location} • {job.period}</div>
-        </div>
-        <span style={{ transform: `rotate(${isOpen ? 90 : 0}deg)`, transition: '.3s' }}>›</span>
-      </button>
-      <div
-        style={{
-          maxHeight: isOpen ? 500 : 0,
-          overflow: 'hidden',
-          transition: 'max-height .5s cubic-bezier(.7,0,.3,1)'
-        }}
-      >
-        {isOpen && (
-          <ul style={expList}>
-            {job.bullets?.map((b, i) => <li key={i}>{b}</li>)}
-          </ul>
-        )}
-      </div>
+const [open, setOpen] = useState(false);
+const isOpen = forceOpen || open;
+return (
+<div style={expCard}>
+  <button
+    onClick={() => setOpen(o => !o)}
+    aria-expanded={isOpen}
+    style={expHeader}
+  >
+    <div style={{ textAlign: 'left' }}>
+      <strong>{job.title}</strong>
+      <div style={{ fontSize: '.7rem', opacity: .75 }}>{job.org} • {job.location} • {job.period}</div>
     </div>
-  );
+    <span style={{ transform: `rotate(${isOpen ? 90 : 0}deg)`, transition: '.3s' }}>›</span>
+  </button>
+  <div
+    style={{
+      maxHeight: isOpen ? 500 : 0,
+      overflow: 'hidden',
+      transition: 'max-height .5s cubic-bezier(.7,0,.3,1)'
+    }}
+  >
+    {isOpen && (
+      <ul style={expList}>
+        {job.bullets?.map((b, i) => <li key={i}>{b}</li>)}
+      </ul>
+    )}
+  </div>
+</div>
+);
 }
 
 function SkillBar({ name, level }) {
-  return (
-    <div style={skillRow}>
-      <span style={{ flex: '0 0 160px', fontSize: '.8rem' }}>{name}</span>
-      <div style={barOuter} aria-label={`${name} proficiency ${level}%`}>
-        <div
-          style={{
-            ...barInner,
-            width: level + '%'
-          }}
-        >
-          <span style={barLabel}>{level}%</span>
-        </div>
-      </div>
+return (
+<div style={skillRow}>
+  <span style={{ flex: '0 0 160px', fontSize: '.8rem' }}>{name}</span>
+  <div style={barOuter} aria-label={`${name} proficiency ${level}%`}>
+    <div
+      style={{
+        ...barInner,
+        width: level + '%'
+      }}
+    >
+      <span style={barLabel}>{level}%</span>
     </div>
-  );
+  </div>
+</div>
+);
 }
 
 /* ===== Inline Styles ===== */
@@ -424,5 +361,7 @@ const skillRow = { display: 'flex', alignItems: 'center', gap: '.75rem' };
 const barOuter = { flex: 1, background: 'rgba(255,255,255,.08)', height: '14px', borderRadius: '7px', overflow: 'hidden', position: 'relative', border: '1px solid rgba(255,255,255,.12)' };
 const barInner = { background: 'linear-gradient(90deg,#33b4ff,#1b74e4)', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'flex-end', paddingRight: '4px', transition: 'width .9s cubic-bezier(.65,0,.35,1)' };
 const barLabel = { fontSize: '9px', fontWeight: 600, letterSpacing: '.5px' };
+
+/* Removed: const anchorStyle = { position: 'relative', top: '-70px', height: '0px' }; */
 
 export default App;
