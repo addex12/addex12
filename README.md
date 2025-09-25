@@ -1,5 +1,84 @@
 
-# 🌟 Adugna Gizaw — Professional Portfolio & Open Source Hub
+
+# � Adugna Gizaw — International Portfolio & Open Source Hub
+
+[![Portfolio](https://img.shields.io/badge/Portfolio-Live-blue?style=for-the-badge&logo=react)](https://orbalia.pythonanywhere.com)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/eleganceict)
+[![Credly](https://img.shields.io/badge/Credly-Certified-orange?style=for-the-badge&logo=credly)](https://www.credly.com/users/adugnagizaw)
+[![GitHub Followers](https://img.shields.io/github/followers/addex12?style=for-the-badge)](https://github.com/addex12)
+[![Location](https://img.shields.io/badge/Location-Open%20to%20Relocate%20%26%20Visa%20Sponsorship-green?style=for-the-badge)](#relocation)
+
+---
+
+## 👋 About Me
+
+**Adugna Gizaw** — Operations & IT Manager | Data Science Enthusiast | Software Developer
+
+- 9+ years of expertise in operations management, cybersecurity, data analytics, and team leadership
+- Managed $1.2M+ budgets, 3,000+ students, 500+ staff, and cross-functional teams
+- Passionate about digital transformation, innovation, and building efficient operational systems
+- Globally certified by Microsoft, Google, IBM, Citrix, F5, ISC2, Cisco, and more
+- Proven track record in ERP, CRM, asset management, and AI-driven solutions
+
+## 🎓 Education
+
+- MSc Project Management, Florida University Southeast (in progress)
+- MSc Data Science, Addis Ababa University (in progress)
+- BSc Information Systems, Wolkite University
+
+## 🏆 Certifications
+
+- Microsoft, Google, Citrix, F5, Radware, ASU TESOL, ISC2, IBM, Cisco, CertiProf, WorldQuant University, and more
+- [See all on Credly](https://www.credly.com/users/adugnagizaw)
+
+## 🌐 International Focus
+
+> **Open to international opportunities, relocation, and visa sponsorship. Ready to join global teams and make an impact worldwide!**
+
+## 💼 Experience Highlights
+
+- **IT Manager / Acting Operations Director** — Flipper International School (FIS) of ADVTech Groups Ltd.
+- **IT Manager & STEM Robotics Teacher** — The Pharo Foundation (NGO)
+- **IT Manager** — Beonline ICT Solutions PLC
+- **IT Technician & Teacher** — Gibson Youth Academy
+
+## 💡 Portfolio Highlights
+
+- **Edunova ERP** – Full-fledged school ERP system for managing students, teachers, grading, and admissions
+- **School CRM** – Comprehensive CRM for educational institutions
+- **Python & AI Projects** – Machine learning models, automation scripts, and real-world solutions
+- **Tech Innovations** – Experiments in software and hardware integration
+
+## 🔧 Tech Stack & Skills
+
+- **Programming:** Python, JavaScript, SQL, Flask, Streamlit
+- **AI & ML:** Data Science, Deep Learning, NLP, LLaMA
+- **ERP/CRM:** Sage 300, Odoo, Quick-books, Peachtree
+- **Infrastructure:** Ubuntu, Anaconda, GitHub, IT Networking, Server Management, Cloud Solutions
+- **Project Management:** Agile, Scrum, Jira, Monday, MS Project
+- **Other:** Budgeting, Procurement, Team Management, Asset Management, Contract Negotiation
+
+## 🌍 Languages
+
+- English (Full Professional)
+- Amharic (Full Professional)
+- Afaan Oromoo (Full Professional)
+
+## 📬 Contact
+
+| Email | Location | LinkedIn | GitHub |
+|-------|----------|----------|--------|
+| [adugna.gizaw@flipperschools.com](mailto:adugna.gizaw@flipperschools.com) <br> [gizawadugna@gmail.com](mailto:gizawadugna@gmail.com) <br> [adugna.gsr-1468-17@aau.edu.et](mailto:adugna.gsr-1468-17@aau.edu.et) <br> [asutuma@myfuse.education](mailto:asutuma@myfuse.education) | Addis Ababa, Ethiopia <br> <span id="relocation">🌍 <b>Open to Relocate & Visa Sponsorship</b></span> | [linkedin.com/in/eleganceict](https://linkedin.com/in/eleganceict) | [github.com/addex12](https://github.com/addex12) |
+
+---
+
+<p align="center">
+	<b>Visit my interactive portfolio: <a href="https://orbalia.pythonanywhere.com">orbalia.pythonanywhere.com</a></b>
+</p>
+
+---
+
+⭐ **Feel free to fork, contribute, and explore my projects! Let’s build something amazing together! 🚀**
 
 [![Portfolio](https://img.shields.io/badge/Portfolio-Live-blue?style=for-the-badge&logo=react)](./portfolio/)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/eleganceict)
