@@ -8,10 +8,7 @@ import Projects from './components/Projects';
 import Blog from './components/Blog';
 import Stats from './components/Stats';
 import Testimonials from './components/Testimonials';
-import { Section } from './components/Section.jsx';
-import { profile } from './data/profile.js';
-
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
 import { PROFILE, WORK_EXPERIENCE, EDUCATION, LANGUAGES_LIST, CERTIFICATES, SKILLS, OTHER_SKILLS, CERTIFICATIONS, TESTIMONIALS, PROJECTS, BLOGS, STATS, LANGUAGES } from './data/profileData';
 import ScrollProgress from './components/ScrollProgress';
@@ -22,16 +19,6 @@ function App() {
   const [dark, setDark] = useState(false);
   const [lang, setLang] = useState('en');
   const [showTop, setShowTop] = useState(false);
-  const [query, setQuery] = useState('');
-
-  const certs = profile.certifications;
-  const filtered = useMemo(
-    () =>
-      certs.filter(c =>
-        (c.title + c.issuer).toLowerCase().includes(query.toLowerCase())
-      ),
-    [query, certs]
-  );
 
   useEffect(() => {
     const storedTheme = window.localStorage.getItem('portfolio-theme');
@@ -118,6 +105,7 @@ function App() {
           </div>
         </header>
 
+        {/* Component-driven sections (authoritative) */}
         <About profile={PROFILE} />
         <Experience experience={WORK_EXPERIENCE} />
         <Education education={EDUCATION} />
@@ -129,33 +117,45 @@ function App() {
         <Testimonials testimonials={TESTIMONIALS} />
         <Blog blogs={BLOGS} />
 
-        {/* ...existing resume and contact sections... */}
-
-        <section id="about" className="portfolio-section">
-          <h3>About Me</h3>
-          <div className="profile-block">
-            <div className="profile-main">
-              <h2>{PROFILE.name}</h2>
-              <h4>{PROFILE.title}</h4>
-              <div className="profile-contact">
-                <span>📧 <a href={`mailto:${PROFILE.email}`}>{PROFILE.email}</a></span> |
-                <span>📞 {PROFILE.phone}</span> |
-                <span><a href={PROFILE.links.website} target="_blank" rel="noopener noreferrer">Website</a></span> |
-                <span><a href={PROFILE.links.credly} target="_blank" rel="noopener noreferrer">Credly</a></span> |
-                <span><a href={PROFILE.links.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a></span>
-              </div>
-              <p className="profile-summary">{PROFILE.summary}</p>
-              <div className="profile-skills">
-                <b>Core Skills:</b>
-                <ul>
-                  {PROFILE.coreSkills.map((s, i) => <li key={i}>{s}</li>)}
-                </ul>
-              </div>
-            </div>
-          </div>
+        {/* Keep unique sections (Resume & Contact) */}
+        <section id="resume" className="portfolio-section">
+          <h3>Resume</h3>
+          <p>
+            <a className="resume-btn" href="/resume.pdf" download>Download Resume (PDF)</a> or connect on <a href="https://linkedin.com/in/eleganceict" target="_blank" rel="noopener noreferrer">LinkedIn</a> for more details.
+          </p>
         </section>
 
-        <section id="workexp" className="portfolio-section">
+        <section id="contact" className="portfolio-section">
+          <h3>Contact</h3>
+          <ul>
+            <li>Email: <span className="copy-email" onClick={() => {navigator.clipboard.writeText('adugna.gizaw@flipperschools.com');}} title="Copy email">adugna.gizaw@flipperschools.com 📋</span></li>
+            <li>Email: <span className="copy-email" onClick={() => {navigator.clipboard.writeText('gizawadugna@gmail.com');}} title="Copy email">gizawadugna@gmail.com 📋</span></li>
+            <li>Location: Addis Ababa, Ethiopia</li>
+            <li>LinkedIn: <a href="https://linkedin.com/in/eleganceict" target="_blank" rel="noopener noreferrer">linkedin.com/in/eleganceict</a></li>
+            <li>GitHub: <a href="https://github.com/addex12" target="_blank" rel="noopener noreferrer">github.com/addex12</a></li>
+          </ul>
+          <p><a className="resume-btn" href="mailto:adugna.gizaw@flipperschools.com?subject=Contact%20from%20Portfolio">Contact Me by Email</a></p>
+        </section>
+
+        <footer className="portfolio-footer">
+          <p>⭐ Open to international opportunities, relocation, and visa sponsorship. Let’s build something amazing together! 🚀</p>
+        </footer>
+      </div>
+      {showTop && (
+        <button
+          type="button"
+          className="back-to-top"
+          onClick={handleScrollTop}
+          aria-label="Scroll back to top"
+        >
+          ↑
+        </button>
+      )}
+    </>
+  );
+}
+
+export default App;
           <h3>Work Experience</h3>
           <div className="workexp-list">
             {WORK_EXPERIENCE.map((job, i) => (
