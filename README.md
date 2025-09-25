@@ -23,33 +23,72 @@
 
 ## 🎓 Education
 
-- MSc Project Management, Florida University Southeast (in progress)
-- MSc Data Science, Addis Ababa University (in progress)
+- MSc Project Management, Florida University Southeast (Candidate)
+- MSc Data Science, Addis Ababa University (Candidate)
 - BSc Information Systems, Wolkite University
 
 ---
 
 ## 🏆 Selected Certifications
 
-- Microsoft Certified: Azure Fundamentals
-- Google Cybersecurity Professional Certificate (v2)
+- IBM Project Management Essentials
+- Certified Marketing Insider (Digital Marketing Institute)
+- IBM Data Science Orientation
+- Cisco Qualified Data Science Blue Belt (2023)
+- Google AI Essentials
 - Google Advanced Data Analytics Certificate
 - Google Data Analytics Professional Certificate
 - Google Project Management Professional Certificate
-- Google IT Support Professional Certificate (v2)
+- Google Cybersecurity Professional Certificate
+- Google IT Support Professional Certificate
 - Google Business Intelligence Certificate
-- IBM Project Management Professional
 - Applied Data Science Lab (WorldQuant University)
 - ISC2 Candidate (Active)
-- Google AI Essentials V1
 - From Relational Model (SQL) to MongoDB’s Document Model
 - Data Analytics Essentials
 - Microsoft UX Design Professional Certificate
 - Lifelong Learning 2025 (CertiProf)
 - Computer Hardware Basics (Cisco)
-- Project Management Essentials
 - Project Management Job Search, Resume, and Interview Prep
-  [See all on Credly](https://www.credly.com/users/adugnagizaw)
+	[See all on Credly](https://www.credly.com/users/adugnagizaw)
+
+### 🎖️ Badge Wall
+
+<p align="left">
+	<a href="https://www.credly.com/users/adugnagizaw" title="IBM Project Management Essentials" target="_blank" rel="noopener">
+		<img src="https://img.shields.io/badge/IBM%20Project%20Management%20Essentials-052FAD?style=for-the-badge&logo=ibm&logoColor=white" alt="IBM Project Management Essentials" />
+	</a>
+	<a href="https://www.credly.com/users/adugnagizaw" title="Certified Marketing Insider" target="_blank" rel="noopener">
+		<img src="https://img.shields.io/badge/Certified%20Marketing%20Insider-2F855A?style=for-the-badge&logo=google-marketing-platform&logoColor=white" alt="Certified Marketing Insider" />
+	</a>
+	<a href="https://www.credly.com/users/adugnagizaw" title="IBM Data Science Orientation" target="_blank" rel="noopener">
+		<img src="https://img.shields.io/badge/IBM%20Data%20Science%20Orientation-0A1F62?style=for-the-badge&logo=ibm&logoColor=white" alt="IBM Data Science Orientation" />
+	</a>
+	<a href="https://www.credly.com/users/adugnagizaw" title="Cisco Qualified Data Science Blue Belt" target="_blank" rel="noopener">
+		<img src="https://img.shields.io/badge/Cisco%20Data%20Science%20Blue%20Belt-1BA0D7?style=for-the-badge&logo=cisco&logoColor=white" alt="Cisco Qualified Data Science Blue Belt" />
+	</a>
+	<a href="https://www.credly.com/users/adugnagizaw" title="Google AI Essentials" target="_blank" rel="noopener">
+		<img src="https://img.shields.io/badge/Google%20AI%20Essentials-4285F4?style=for-the-badge&logo=google&logoColor=white" alt="Google AI Essentials" />
+	</a>
+	<a href="https://www.credly.com/users/adugnagizaw" title="Google Advanced Data Analytics" target="_blank" rel="noopener">
+		<img src="https://img.shields.io/badge/Google%20Advanced%20Data%20Analytics-0F9D58?style=for-the-badge&logo=google&logoColor=white" alt="Google Advanced Data Analytics" />
+	</a>
+	<a href="https://www.credly.com/users/adugnagizaw" title="Google Data Analytics" target="_blank" rel="noopener">
+		<img src="https://img.shields.io/badge/Google%20Data%20Analytics-34A853?style=for-the-badge&logo=google&logoColor=white" alt="Google Data Analytics" />
+	</a>
+	<a href="https://www.credly.com/users/adugnagizaw" title="Google Project Management" target="_blank" rel="noopener">
+		<img src="https://img.shields.io/badge/Google%20Project%20Management-FBBC04?style=for-the-badge&logo=google&logoColor=white" alt="Google Project Management" />
+	</a>
+	<a href="https://www.credly.com/users/adugnagizaw" title="Google Cybersecurity" target="_blank" rel="noopener">
+		<img src="https://img.shields.io/badge/Google%20Cybersecurity-E94235?style=for-the-badge&logo=google&logoColor=white" alt="Google Cybersecurity" />
+	</a>
+	<a href="https://www.credly.com/users/adugnagizaw" title="Google IT Support" target="_blank" rel="noopener">
+		<img src="https://img.shields.io/badge/Google%20IT%20Support-1967D2?style=for-the-badge&logo=google&logoColor=white" alt="Google IT Support" />
+	</a>
+	<a href="https://www.credly.com/users/adugnagizaw" title="Google Business Intelligence" target="_blank" rel="noopener">
+		<img src="https://img.shields.io/badge/Google%20Business%20Intelligence-673AB7?style=for-the-badge&logo=google&logoColor=white" alt="Google Business Intelligence" />
+	</a>
+</p>
 
 ---
 
