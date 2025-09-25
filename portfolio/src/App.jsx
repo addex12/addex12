@@ -227,63 +227,257 @@ function App() {
     win.document.close()
   }
 
-  // ...existing JSX above...
+  // REPLACE the existing return with the full layout:
+  return (
+    <>
+      <ScrollProgress />
 
-  {/* OLD resume section replaced */}
-  <section id="resume" data-nav-target className="portfolio-section">
-    <h3>Resume</h3>
-    <p style={{fontSize:'.75rem',opacity:.8,marginTop:'.2rem'}}>
-      Multiple export options for ATS, manual review, or PDF.
-    </p>
-    <div style={{display:'flex',flexWrap:'wrap',gap:'.6rem',margin:'1rem 0 1.2rem'}}>
-      <button className="resume-btn" onClick={downloadTxt}>Download Plain Text</button>
-      <button className="resume-btn" onClick={printPDF}>Generate / Print PDF</button>
-      <button className="resume-btn" onClick={() => setShowATS(s=>!s)}>
-        {showATS ? 'Hide ATS Preview' : 'Show ATS Preview'}
-      </button>
-      <a className="resume-btn" href="/resume-ats.txt" target="_blank" rel="noopener">
-        Open Raw Text
-      </a>
-    </div>
-    <ResumeATS collapsed={!showATS} />
-  </section>
+      {/* Global styles for smooth scroll & active nav */}
+      <style>
+        {`html{scroll-behavior:smooth;}
+          section[id],div[id]{scroll-margin-top:90px;}
+          @media (max-width:700px){section[id],div[id]{scroll-margin-top:110px;}}
+          nav a.active{color:#3aa9ff;font-weight:600;position:relative;}
+          nav a.active::after{content:'';position:absolute;left:0;right:0;bottom:-4px;height:2px;background:#3aa9ff;border-radius:2px;}
+          .flash-anchor{animation:flashBg .9s ease;}
+          @keyframes flashBg{
+            0%{box-shadow:0 0 0 0 rgba(255,255,255,0);background:rgba(255,255,255,.10);}
+            40%{box-shadow:0 0 0 4px rgba(255,255,255,.15);background:rgba(255,255,255,.18);}
+            100%{box-shadow:0 0 0 0 rgba(255,255,255,0);background:inherit;}
+          }`}
+      </style>
 
-  {/* Resume & Contact already have ids */}
-  <section id="contact" data-nav-target className="portfolio-section">
-    <h3>Contact</h3>
-    <ul>
-      {/* Reordered: gmail first */}
-      <li>Email: <span className="copy-email" onClick={() => navigator.clipboard.writeText('gizawadugna@gmail.com')} title="Copy email">gizawadugna@gmail.com 📋</span></li>
-      <li>Email: <span className="copy-email" onClick={() => navigator.clipboard.writeText('adugna.gizaw@flipperschools.com')} title="Copy email">adugna.gizaw@flipperschools.com 📋</span></li>
-      <li>Location: Addis Ababa, Ethiopia</li>
-      <li>LinkedIn: {links.linkedin ? <a href={links.linkedin} target="_blank" rel="noopener noreferrer">{links.linkedin.replace(/^https?:\/\//,'')}</a> : '—'}</li>
-      <li>GitHub: <a href="https://github.com/addex12" target="_blank" rel="noopener noreferrer">github.com/addex12</a></li>
-    </ul>
-    <p>
-      <a className="resume-btn" href="mailto:adugna.gizaw@flipperschools.com?subject=Contact%20from%20Portfolio">
-        Contact Me
-      </a>
-    </p>
-  </section>
+      <div className={`portfolio-container${dark ? ' dark' : ''}`}>
+        {/* Header / Nav */}
+        <header className="portfolio-header">
+          <div className="header-row">
+            <h1>{profileSafe.name}</h1>
+            <div className="header-actions">
+              <button className="dark-toggle" onClick={() => setDark(d => !d)} title="Toggle dark mode">
+                {dark ? '🌙' : '☀️'}
+              </button>
+              <select
+                className="lang-switch"
+                value={lang}
+                onChange={e => setLang(e.target.value)}
+                title="Switch language"
+              >
+                {LANGUAGES.map(l => (
+                  <option key={l.code} value={l.code}>{l.label}</option>
+                ))}
+              </select>
+            </div>
+          </div>
+          <h2>{profileSafe.title}</h2>
+          <p className="relocation-banner">🌍 Open to Relocate & Visa Sponsorship Worldwide</p>
+          <nav>
+            <a className={activeId==='about'?'active':''} href="#about" onClick={e=>{e.preventDefault();scrollTo('about')}}>About</a>
+            <a className={activeId==='workexp'?'active':''} href="#workexp" onClick={e=>{e.preventDefault();scrollTo('workexp')}}>Experience</a>
+            <a className={activeId==='education'?'active':''} href="#education" onClick={e=>{e.preventDefault();scrollTo('education')}}>Education</a>
+            <a className={activeId==='languages'?'active':''} href="#languages" onClick={e=>{e.preventDefault();scrollTo('languages')}}>Languages</a>
+            <a className={activeId==='skills'?'active':''} href="#skills" onClick={e=>{e.preventDefault();scrollTo('skills')}}>Skills</a>
+            <a className={activeId==='certs'?'active':''} href="#certs" onClick={e=>{e.preventDefault();scrollTo('certs')}}>Certifications</a>
+            <a className={activeId==='stats'?'active':''} href="#stats" onClick={e=>{e.preventDefault();scrollTo('stats')}}>Stats</a>
+            <a className={activeId==='projects'?'active':''} href="#projects" onClick={e=>{e.preventDefault();scrollTo('projects')}}>Projects</a>
+            <a className={activeId==='testimonials'?'active':''} href="#testimonials" onClick={e=>{e.preventDefault();scrollTo('testimonials')}}>Testimonials</a>
+            <a className={activeId==='blog'?'active':''} href="#blog" onClick={e=>{e.preventDefault();scrollTo('blog')}}>Blog</a>
+            <a className={activeId==='contact'?'active':''} href="#contact" onClick={e=>{e.preventDefault();scrollTo('contact')}}>Contact</a>
+          </nav>
+          <div className="social-icons">
+            {links.linkedin && (
+              <a href={links.linkedin} target="_blank" rel="noopener noreferrer" title="LinkedIn">
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg"
+                  alt="LinkedIn"
+                  height="28"
+                />
+              </a>
+            )}
+            <a
+              href="https://github.com/addex12"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="GitHub"
+            >
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+                alt="GitHub"
+                height="28"
+              />
+            </a>
+          </div>
+        </header>
 
-  <footer className="portfolio-footer">
-    <p>⭐ Open to international opportunities, relocation, and visa sponsorship. Let’s build something amazing together! 🚀</p>
-  </footer>
-</div>
+        {/* About */}
+        <section id="about" data-nav-target style={sectionStyle}>
+          <header style={sectionHeader}>
+            <h3 style={sectionTitle}>About Me</h3>
+            <button style={ghostBtn} onClick={()=>setAboutExpanded(a=>!a)} aria-expanded={aboutExpanded}>
+              {aboutExpanded ? 'Show Less' : 'Read More'}
+            </button>
+          </header>
+          <div style={aboutGrid}>
+            <div style={aboutMain}>
+              <p style={{marginTop:0}}>
+                {summary.slice(0, aboutExpanded ? summary.length : 230)}
+                {summary.length > 230 && !aboutExpanded && '...'}
+              </p>
+              {aboutExpanded && (
+                <ul style={inlineList}>
+                  {coreSkills.slice(0,8).map((s,i)=>(
+                    <li key={i} style={pill}>{s}</li>
+                  ))}
+                </ul>
+              )}
+              <div style={{marginTop:'1rem',display:'flex',gap:'.5rem',flexWrap:'wrap'}}>
+                {links.website && <a href={links.website} target="_blank" rel="noopener" style={primaryBtn}>Portfolio</a>}
+                {links.linkedin && <a href={links.linkedin} target="_blank" rel="noopener" style={outlineBtn}>LinkedIn</a>}
+                {links.credly && <a href={links.credly} target="_blank" rel="noopener" style={outlineBtn}>Credly</a>}
+              </div>
+            </div>
+            <aside style={aboutAside}>
+              <h4 style={{margin:'0 0 .75rem'}}>Quick Snapshot</h4>
+              <ul style={factList}>
+                <li><b>Experience:</b> {profileSafe.years || '9+'} yrs</li>
+                <li><b>Focus:</b> IT Ops, Data, Transformation</li>
+                <li><b>Location:</b> Addis Ababa (Global-ready)</li>
+                <li><b>Open To:</b> Relocation / Sponsorship</li>
+                <li><b>Certs:</b> {certificateCount}+</li>
+              </ul>
+            </aside>
+          </div>
+        </section>
 
-{showTop && (
-  <button
-    type="button"
-    className="back-to-top"
-    onClick={handleScrollTop}
-    aria-label="Scroll back to top"
-  >
-    ↑
-  </button>
-)}
-</>
-);
-}
+        {/* Experience */}
+        <section id="workexp" data-nav-target style={sectionStyle}>
+          <header style={sectionHeader}>
+            <h3 style={sectionTitle}>Experience</h3>
+            <div style={{display:'flex',gap:'.5rem',flexWrap:'wrap'}}>
+              <input
+                aria-label="Filter experience"
+                placeholder="Filter (role, org, keyword)..."
+                value={expFilter}
+                onChange={e=>setExpFilter(e.target.value)}
+                style={input}
+              />
+              <button style={ghostBtn} onClick={()=>setExpOpenAll(o=>!o)}>
+                {expOpenAll ? 'Collapse All' : 'Expand All'}
+              </button>
+            </div>
+          </header>
+          <div style={{display:'grid',gap:'1rem'}}>
+            {filteredExperience.map((job,idx)=>(
+              <ExperienceAccordion key={idx} job={job} forceOpen={expOpenAll} index={idx}/>
+            ))}
+            {!filteredExperience.length && <em style={{opacity:.6}}>No matching roles.</em>}
+          </div>
+        </section>
+
+        {/* Skills */}
+        <section id="skills" data-nav-target style={sectionStyle}>
+          <header style={sectionHeader}>
+            <h3 style={sectionTitle}>Core Skills</h3>
+            <div style={{display:'flex',gap:'.5rem',flexWrap:'wrap'}}>
+              <input
+                aria-label="Search skills"
+                placeholder="Search skills..."
+                value={skillSearch}
+                onChange={e=>setSkillSearch(e.target.value)}
+                style={input}
+              />
+              <div style={tabGroup}>
+                <button
+                  style={skillCategory==='technical'?tabActive:tab}
+                  onClick={()=>setSkillCategory('technical')}
+                >Technical</button>
+                <button
+                  style={skillCategory==='other'?tabActive:tab}
+                  onClick={()=>setSkillCategory('other')}
+                >Other</button>
+              </div>
+            </div>
+          </header>
+          {skillCategory==='technical' && (
+            <div style={{display:'grid',gap:'.85rem'}}>
+              {technicalSkills.map((s,i)=>(
+                <SkillBar key={s.name + i} name={s.name} level={s.level}/>
+              ))}
+              {!technicalSkills.length && <em style={{opacity:.6}}>No skills match.</em>}
+            </div>
+          )}
+          {skillCategory==='other' && (
+            <div style={{display:'flex',gap:'.5rem',flexWrap:'wrap'}}>
+              {normalizedOtherSkills.map((s,i)=>(
+                <span key={s+i} style={pill}>{s}</span>
+              ))}
+              {!normalizedOtherSkills.length && <em style={{opacity:.6}}>No skills match.</em>}
+            </div>
+          )}
+        </section>
+
+        {/* Data-driven component sections */}
+        <div id="education" data-nav-target><Education education={eduData}/></div>
+        <div id="languages" data-nav-target><Languages languages={langList}/></div>
+        <div id="certs" data-nav-target><Certifications certifications={certs} certificates={certNames}/></div>
+        <div id="stats" data-nav-target><Stats stats={statsSafe}/></div>
+        <div id="projects" data-nav-target><Projects projects={projects} filter={filter} setFilter={setFilter}/></div>
+        <div id="testimonials" data-nav-target><Testimonials testimonials={testimonials}/></div>
+        <div id="blog" data-nav-target><Blog blogs={blogs}/></div>
+
+        {/* Resume Section */}
+        <section id="resume" data-nav-target className="portfolio-section">
+          <h3>Resume</h3>
+          <p style={{fontSize:'.75rem',opacity:.8,marginTop:'.2rem'}}>
+            Multiple export options for ATS, manual review, or PDF.
+          </p>
+          <div style={{display:'flex',flexWrap:'wrap',gap:'.6rem',margin:'1rem 0 1.2rem'}}>
+            <button className="resume-btn" onClick={downloadTxt}>Download Plain Text</button>
+            <button className="resume-btn" onClick={printPDF}>Generate / Print PDF</button>
+            <button className="resume-btn" onClick={() => setShowATS(s=>!s)}>
+              {showATS ? 'Hide ATS Preview' : 'Show ATS Preview'}
+            </button>
+            <a className="resume-btn" href="/resume-ats.txt" target="_blank" rel="noopener">
+              Open Raw Text
+            </a>
+          </div>
+          <ResumeATS collapsed={!showATS}/>
+        </section>
+
+        {/* Contact Section */}
+        <section id="contact" data-nav-target className="portfolio-section">
+          <h3>Contact</h3>
+          <ul>
+            <li>Email: <span className="copy-email" onClick={()=>navigator.clipboard.writeText('gizawadugna@gmail.com')} title="Copy email">gizawadugna@gmail.com 📋</span></li>
+            <li>Email: <span className="copy-email" onClick={()=>navigator.clipboard.writeText('adugna.gizaw@flipperschools.com')} title="Copy email">adugna.gizaw@flipperschools.com 📋</span></li>
+            <li>Location: Addis Ababa, Ethiopia</li>
+            <li>LinkedIn: {links.linkedin ? <a href={links.linkedin} target="_blank" rel="noopener noreferrer">{links.linkedin.replace(/^https?:\/\//,'')}</a> : '—'}</li>
+            <li>GitHub: <a href="https://github.com/addex12" target="_blank" rel="noopener noreferrer">github.com/addex12</a></li>
+          </ul>
+          <p>
+            <a className="resume-btn" href="mailto:adugna.gizaw@flipperschools.com?subject=Contact%20from%20Portfolio">
+              Contact Me
+            </a>
+          </p>
+        </section>
+
+        <footer className="portfolio-footer">
+          <p>⭐ Open to international opportunities, relocation, and visa sponsorship. Let’s build something amazing together! 🚀</p>
+        </footer>
+      </div>
+
+      {showTop && (
+        <button
+          type="button"
+          className="back-to-top"
+          onClick={handleScrollTop}
+          aria-label="Scroll back to top"
+        >
+          ↑
+        </button>
+      )}
+    </>
+  );
+} // end App
 
 /* ===== Helper Components (inline for this revamp) ===== */
 function ExperienceAccordion({ job, forceOpen, index }) {
