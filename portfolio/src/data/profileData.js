@@ -232,3 +232,8 @@ export const STATS = {
   blogPosts: 7,
 };
 
+export const LANGUAGES = [
+  { code: 'en', label: 'English' },
+  { code: 'am', label: 'Amharic' },
+];
+
