@@ -8,9 +8,10 @@ import Projects from './components/Projects';
 import Blog from './components/Blog';
 import Stats from './components/Stats';
 import Testimonials from './components/Testimonials';
+import { Section } from './components/Section.jsx';
+import { profile } from './data/profile.js';
 
-
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import './App.css';
 import { PROFILE, WORK_EXPERIENCE, EDUCATION, LANGUAGES_LIST, CERTIFICATES, SKILLS, OTHER_SKILLS, CERTIFICATIONS, TESTIMONIALS, PROJECTS, BLOGS, STATS, LANGUAGES } from './data/profileData';
 import ScrollProgress from './components/ScrollProgress';
@@ -21,6 +22,16 @@ function App() {
   const [dark, setDark] = useState(false);
   const [lang, setLang] = useState('en');
   const [showTop, setShowTop] = useState(false);
+  const [query, setQuery] = useState('');
+
+  const certs = profile.certifications;
+  const filtered = useMemo(
+    () =>
+      certs.filter(c =>
+        (c.title + c.issuer).toLowerCase().includes(query.toLowerCase())
+      ),
+    [query, certs]
+  );
 
   useEffect(() => {
     const storedTheme = window.localStorage.getItem('portfolio-theme');
@@ -303,6 +314,42 @@ function App() {
       )}
     </>
   );
+}
+
+const pillStyle = {
+  background: 'rgba(255,255,255,.08)',
+  padding: '.45rem .75rem',
+  borderRadius: '999px',
+  fontSize: '.75rem',
+  backdropFilter: 'blur(4px)',
+  border: '1px solid rgba(255,255,255,.12)'
+}
+
+const inputStyle = {
+  width: '100%',
+  padding: '.65rem .8rem',
+  borderRadius: '.6rem',
+  border: '1px solid rgba(255,255,255,.25)',
+  background: 'rgba(255,255,255,.07)',
+  color: 'inherit'
+}
+
+const cardStyle = {
+  background: 'linear-gradient(135deg,rgba(255,255,255,.08),rgba(255,255,255,.03))',
+  padding: '.8rem 1rem',
+  borderRadius: '.75rem',
+  border: '1px solid rgba(255,255,255,.15)'
+}
+
+const impactStyle = {
+  background: 'rgba(255,255,255,.07)',
+  padding: '.9rem .85rem',
+  borderRadius: '.8rem',
+  display: 'flex',
+  flexDirection: 'column',
+  gap: '.25rem',
+  border: '1px solid rgba(255,255,255,.15)',
+  textAlign: 'left'
 }
 
 export default App;
