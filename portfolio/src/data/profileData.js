@@ -1,4 +1,7 @@
-// All profile, experience, education, skills, and certifications data for Adugna Gizaw portfolio
+// Central data module for Adugna Gizaw portfolio
+// Exports: PROFILE, WORK_EXPERIENCE, EDUCATION, LANGUAGES_LIST, LANGUAGES,
+// CERTIFICATES (raw text list), CERTIFICATIONS (structured objects with metadata),
+// SKILLS, OTHER_SKILLS, TESTIMONIALS, PROJECTS, BLOGS, STATS
 
 export const PROFILE = {
   name: 'ADUGNA GIZAW',
@@ -83,6 +86,7 @@ export const LANGUAGES_LIST = [
   { name: 'Afaan Oromoo', level: 'Full Professional' },
 ];
 
+// Flat list (human‑readable) of certificates shown in resume / README bullet list
 export const CERTIFICATES = [
   'IBM Project Management Essentials',
   'Certified Marketing Insider',
@@ -106,141 +110,36 @@ export const CERTIFICATES = [
   'Project Management Job Search, Resume, and Interview Prep'
 ];
 
+// Structured certification objects for UI badge grid. Keep unique by (name + issuer + year).
 export const CERTIFICATIONS = [
-  {
-    name: 'IBM Project Management Essentials',
-    issuer: 'IBM SkillsBuild',
-    year: 2024,
-    logo: 'https://img.shields.io/badge/IBM%20Project%20Management%20Essentials-052FAD?style=for-the-badge&logo=ibm&logoColor=white',
-    link: 'https://www.credly.com/users/adugnagizaw'
-  },
-  {
-    name: 'Certified Marketing Insider',
-    issuer: 'Digital Marketing Institute',
-    year: 2024,
-    logo: 'https://img.shields.io/badge/Certified%20Marketing%20Insider-2F855A?style=for-the-badge&logo=google-marketing-platform&logoColor=white',
-    link: 'https://www.credly.com/users/adugnagizaw'
-  },
-  {
-    name: 'IBM Data Science Orientation',
-    issuer: 'IBM Cognitive Class',
-    year: 2024,
-    logo: 'https://img.shields.io/badge/IBM%20Data%20Science%20Orientation-0A1F62?style=for-the-badge&logo=ibm&logoColor=white',
-    link: 'https://www.credly.com/users/adugnagizaw'
-  },
-  {
-    name: 'Cisco Qualified Data Science Blue Belt',
-    issuer: 'Cisco Networking Academy',
-    year: 2023,
-    logo: 'https://img.shields.io/badge/Cisco%20Data%20Science%20Blue%20Belt-1BA0D7?style=for-the-badge&logo=cisco&logoColor=white',
-    link: 'https://www.credly.com/users/adugnagizaw'
-  },
-  {
-    name: 'Google AI Essentials',
-    issuer: 'Google',
-    year: 2024,
-    logo: 'https://img.shields.io/badge/Google%20AI%20Essentials-4285F4?style=for-the-badge&logo=google&logoColor=white',
-    link: 'https://www.credly.com/users/adugnagizaw'
-  },
-  {
-    name: 'Google Advanced Data Analytics',
-    issuer: 'Google',
-    year: 2024,
-    logo: 'https://img.shields.io/badge/Google%20Advanced%20Data%20Analytics-0F9D58?style=for-the-badge&logo=google&logoColor=white',
-    link: 'https://www.credly.com/users/adugnagizaw'
-  },
-  {
-    name: 'Google Data Analytics',
-    issuer: 'Google',
-    year: 2024,
-    logo: 'https://img.shields.io/badge/Google%20Data%20Analytics-34A853?style=for-the-badge&logo=google&logoColor=white',
-    link: 'https://www.credly.com/users/adugnagizaw'
-  },
-  {
-    name: 'Google Project Management',
-    issuer: 'Google',
-    year: 2024,
-    logo: 'https://img.shields.io/badge/Google%20Project%20Management-FBBC04?style=for-the-badge&logo=google&logoColor=white',
-    link: 'https://www.credly.com/users/adugnagizaw'
-  },
-  {
-    name: 'Google Cybersecurity',
-    issuer: 'Google',
-    year: 2024,
-    logo: 'https://img.shields.io/badge/Google%20Cybersecurity-E94235?style=for-the-badge&logo=google&logoColor=white',
-    link: 'https://www.credly.com/users/adugnagizaw'
-  },
-  {
-    name: 'Google IT Support',
-    issuer: 'Google',
-    year: 2024,
-    logo: 'https://img.shields.io/badge/Google%20IT%20Support-1967D2?style=for-the-badge&logo=google&logoColor=white',
-    link: 'https://www.credly.com/users/adugnagizaw'
-  },
-  {
-    name: 'Google Business Intelligence',
-    issuer: 'Google',
-    year: 2024,
-    logo: 'https://img.shields.io/badge/Google%20Business%20Intelligence-673AB7?style=for-the-badge&logo=google&logoColor=white',
-    link: 'https://www.credly.com/users/adugnagizaw'
-  },
-  // --- Additional badges parsed from academic transcript (years/logo colors are provisional; adjust if needed) ---
-  {
-    name: 'Sage 300 ERP Certified Consultant',
-    issuer: 'Sage',
-    year: 2024,
-    logo: 'https://img.shields.io/badge/Sage%20300%20ERP%20Consultant-00A859?style=for-the-badge&logo=sage&logoColor=white',
-    link: 'https://www.credly.com/users/adugnagizaw'
-  },
-  {
-    name: 'Applied Data Science Lab',
-    issuer: 'WorldQuant University',
-    year: 2024,
-    logo: 'https://img.shields.io/badge/Applied%20Data%20Science%20Lab-101820?style=for-the-badge&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAB&logoColor=white',
-    link: 'https://www.credly.com/users/adugnagizaw'
-  },
-  {
-    name: 'From Relational SQL to MongoDB Document Model',
-    issuer: 'MongoDB',
-    year: 2024,
-    logo: 'https://img.shields.io/badge/MongoDB%20Data%20Model%20Design-47A248?style=for-the-badge&logo=mongodb&logoColor=white',
-    link: 'https://www.credly.com/users/adugnagizaw'
-  },
-  {
-    name: 'Data Analytics Essentials',
-    issuer: 'IBM SkillsBuild',
-    year: 2024,
-    logo: 'https://img.shields.io/badge/Data%20Analytics%20Essentials-052FAD?style=for-the-badge&logo=ibm&logoColor=white',
-    link: 'https://www.credly.com/users/adugnagizaw'
-  },
-  {
-    name: 'Microsoft UX Design Professional Certificate',
-    issuer: 'Microsoft',
-    year: 2024,
-    logo: 'https://img.shields.io/badge/Microsoft%20UX%20Design-0078D4?style=for-the-badge&logo=microsoft&logoColor=white',
-    link: 'https://www.credly.com/users/adugnagizaw'
-  },
-  {
-    name: 'Lifelong Learning 2025',
-    issuer: 'CertiProf',
-    year: 2025,
-    logo: 'https://img.shields.io/badge/Lifelong%20Learning%202025-FF6A00?style=for-the-badge&logo=certiprof&logoColor=white',
-    link: 'https://www.credly.com/users/adugnagizaw'
-  },
-  {
-    name: 'Computer Hardware Basics',
-    issuer: 'Cisco',
-    year: 2024,
-    logo: 'https://img.shields.io/badge/Computer%20Hardware%20Basics-1BA0D7?style=for-the-badge&logo=cisco&logoColor=white',
-    link: 'https://www.credly.com/users/adugnagizaw'
-  },
-  {
-    name: 'Project Management Job Search & Interview Prep',
-    issuer: 'IBM SkillsBuild',
-    year: 2024,
-    logo: 'https://img.shields.io/badge/PM%20Job%20Search%20%26%20Interview%20Prep-052FAD?style=for-the-badge&logo=ibm&logoColor=white',
-    link: 'https://www.credly.com/users/adugnagizaw'
-  }
+  // Google Certificates
+  { name: 'Google AI Essentials', issuer: 'Google', year: 2024, logo: 'https://img.shields.io/badge/Google%20AI%20Essentials-4285F4?style=for-the-badge&logo=google&logoColor=white', link: 'https://www.credly.com/users/adugnagizaw' },
+  { name: 'Google Advanced Data Analytics', issuer: 'Google', year: 2024, logo: 'https://img.shields.io/badge/Google%20Advanced%20Data%20Analytics-0F9D58?style=for-the-badge&logo=google&logoColor=white', link: 'https://www.credly.com/users/adugnagizaw' },
+  { name: 'Google Data Analytics', issuer: 'Google', year: 2024, logo: 'https://img.shields.io/badge/Google%20Data%20Analytics-34A853?style=for-the-badge&logo=google&logoColor=white', link: 'https://www.credly.com/users/adugnagizaw' },
+  { name: 'Google Project Management', issuer: 'Google', year: 2024, logo: 'https://img.shields.io/badge/Google%20Project%20Management-FBBC04?style=for-the-badge&logo=google&logoColor=white', link: 'https://www.credly.com/users/adugnagizaw' },
+  { name: 'Google Cybersecurity', issuer: 'Google', year: 2024, logo: 'https://img.shields.io/badge/Google%20Cybersecurity-E94235?style=for-the-badge&logo=google&logoColor=white', link: 'https://www.credly.com/users/adugnagizaw' },
+  { name: 'Google IT Support', issuer: 'Google', year: 2024, logo: 'https://img.shields.io/badge/Google%20IT%20Support-1967D2?style=for-the-badge&logo=google&logoColor=white', link: 'https://www.credly.com/users/adugnagizaw' },
+  { name: 'Google Business Intelligence', issuer: 'Google', year: 2024, logo: 'https://img.shields.io/badge/Google%20Business%20Intelligence-673AB7?style=for-the-badge&logo=google&logoColor=white', link: 'https://www.credly.com/users/adugnagizaw' },
+  // IBM / SkillsBuild
+  { name: 'IBM Project Management Essentials', issuer: 'IBM SkillsBuild', year: 2024, logo: 'https://img.shields.io/badge/IBM%20Project%20Management%20Essentials-052FAD?style=for-the-badge&logo=ibm&logoColor=white', link: 'https://www.credly.com/users/adugnagizaw' },
+  { name: 'IBM Data Science Orientation', issuer: 'IBM Cognitive Class', year: 2024, logo: 'https://img.shields.io/badge/IBM%20Data%20Science%20Orientation-0A1F62?style=for-the-badge&logo=ibm&logoColor=white', link: 'https://www.credly.com/users/adugnagizaw' },
+  { name: 'Data Analytics Essentials', issuer: 'IBM SkillsBuild', year: 2024, logo: 'https://img.shields.io/badge/Data%20Analytics%20Essentials-052FAD?style=for-the-badge&logo=ibm&logoColor=white', link: 'https://www.credly.com/users/adugnagizaw' },
+  { name: 'Project Management Job Search & Interview Prep', issuer: 'IBM SkillsBuild', year: 2024, logo: 'https://img.shields.io/badge/PM%20Job%20Search%20%26%20Interview%20Prep-052FAD?style=for-the-badge&logo=ibm&logoColor=white', link: 'https://www.credly.com/users/adugnagizaw' },
+  // Cisco
+  { name: 'Cisco Qualified Data Science Blue Belt', issuer: 'Cisco Networking Academy', year: 2023, logo: 'https://img.shields.io/badge/Cisco%20Data%20Science%20Blue%20Belt-1BA0D7?style=for-the-badge&logo=cisco&logoColor=white', link: 'https://www.credly.com/users/adugnagizaw' },
+  { name: 'Computer Hardware Basics', issuer: 'Cisco', year: 2024, logo: 'https://img.shields.io/badge/Computer%20Hardware%20Basics-1BA0D7?style=for-the-badge&logo=cisco&logoColor=white', link: 'https://www.credly.com/users/adugnagizaw' },
+  // Microsoft / UX
+  { name: 'Microsoft UX Design Professional Certificate', issuer: 'Microsoft', year: 2024, logo: 'https://img.shields.io/badge/Microsoft%20UX%20Design-0078D4?style=for-the-badge&logo=microsoft&logoColor=white', link: 'https://www.credly.com/users/adugnagizaw' },
+  // MongoDB
+  { name: 'From Relational SQL to MongoDB Document Model', issuer: 'MongoDB', year: 2024, logo: 'https://img.shields.io/badge/MongoDB%20Data%20Model%20Design-47A248?style=for-the-badge&logo=mongodb&logoColor=white', link: 'https://www.credly.com/users/adugnagizaw' },
+  // WorldQuant
+  { name: 'Applied Data Science Lab', issuer: 'WorldQuant University', year: 2024, logo: 'https://img.shields.io/badge/Applied%20Data%20Science%20Lab-101820?style=for-the-badge&logo=readme&logoColor=white', link: 'https://www.credly.com/users/adugnagizaw' },
+  // Sage
+  { name: 'Sage 300 ERP Certified Consultant', issuer: 'Sage', year: 2024, logo: 'https://img.shields.io/badge/Sage%20300%20ERP%20Consultant-00A859?style=for-the-badge&logo=sage&logoColor=white', link: 'https://www.credly.com/users/adugnagizaw' },
+  // CertiProf
+  { name: 'Lifelong Learning 2025', issuer: 'CertiProf', year: 2025, logo: 'https://img.shields.io/badge/Lifelong%20Learning%202025-FF6A00?style=for-the-badge&logo=readme&logoColor=white', link: 'https://www.credly.com/users/adugnagizaw' },
+  // Marketing
+  { name: 'Certified Marketing Insider', issuer: 'Digital Marketing Institute', year: 2024, logo: 'https://img.shields.io/badge/Certified%20Marketing%20Insider-2F855A?style=for-the-badge&logo=google-marketing-platform&logoColor=white', link: 'https://www.credly.com/users/adugnagizaw' }
 ];
 
 export const SKILLS = [
@@ -282,15 +181,17 @@ export const BLOGS = [
   { title: 'Building Scalable ERP Systems', date: '2025-07-15', summary: 'Lessons learned from Edunova ERP.' },
 ];
 
+// Languages supported in UI (language switcher)
+export const LANGUAGES = [
+  { code: 'en', label: 'English' },
+  { code: 'am', label: 'Amharic' }
+];
+
 export const STATS = {
   github: 120,
   projects: 18,
-  certificates: CERTIFICATES.length,
-  blogPosts: 7,
+  certificates: CERTIFICATES.length,      // textual list count
+  structuredBadges: CERTIFICATIONS.length, // number of badge objects
+  blogPosts: 7
 };
-
-export const LANGUAGES = [
-  { code: 'en', label: 'English' },
-  { code: 'am', label: 'Amharic' },
-];
 
