@@ -183,6 +183,63 @@ export const CERTIFICATIONS = [
     year: 2024,
     logo: 'https://img.shields.io/badge/Google%20Business%20Intelligence-673AB7?style=for-the-badge&logo=google&logoColor=white',
     link: 'https://www.credly.com/users/adugnagizaw'
+  },
+  // --- Additional badges parsed from academic transcript (years/logo colors are provisional; adjust if needed) ---
+  {
+    name: 'Sage 300 ERP Certified Consultant',
+    issuer: 'Sage',
+    year: 2024,
+    logo: 'https://img.shields.io/badge/Sage%20300%20ERP%20Consultant-00A859?style=for-the-badge&logo=sage&logoColor=white',
+    link: 'https://www.credly.com/users/adugnagizaw'
+  },
+  {
+    name: 'Applied Data Science Lab',
+    issuer: 'WorldQuant University',
+    year: 2024,
+    logo: 'https://img.shields.io/badge/Applied%20Data%20Science%20Lab-101820?style=for-the-badge&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAB&logoColor=white',
+    link: 'https://www.credly.com/users/adugnagizaw'
+  },
+  {
+    name: 'From Relational SQL to MongoDB Document Model',
+    issuer: 'MongoDB',
+    year: 2024,
+    logo: 'https://img.shields.io/badge/MongoDB%20Data%20Model%20Design-47A248?style=for-the-badge&logo=mongodb&logoColor=white',
+    link: 'https://www.credly.com/users/adugnagizaw'
+  },
+  {
+    name: 'Data Analytics Essentials',
+    issuer: 'IBM SkillsBuild',
+    year: 2024,
+    logo: 'https://img.shields.io/badge/Data%20Analytics%20Essentials-052FAD?style=for-the-badge&logo=ibm&logoColor=white',
+    link: 'https://www.credly.com/users/adugnagizaw'
+  },
+  {
+    name: 'Microsoft UX Design Professional Certificate',
+    issuer: 'Microsoft',
+    year: 2024,
+    logo: 'https://img.shields.io/badge/Microsoft%20UX%20Design-0078D4?style=for-the-badge&logo=microsoft&logoColor=white',
+    link: 'https://www.credly.com/users/adugnagizaw'
+  },
+  {
+    name: 'Lifelong Learning 2025',
+    issuer: 'CertiProf',
+    year: 2025,
+    logo: 'https://img.shields.io/badge/Lifelong%20Learning%202025-FF6A00?style=for-the-badge&logo=certiprof&logoColor=white',
+    link: 'https://www.credly.com/users/adugnagizaw'
+  },
+  {
+    name: 'Computer Hardware Basics',
+    issuer: 'Cisco',
+    year: 2024,
+    logo: 'https://img.shields.io/badge/Computer%20Hardware%20Basics-1BA0D7?style=for-the-badge&logo=cisco&logoColor=white',
+    link: 'https://www.credly.com/users/adugnagizaw'
+  },
+  {
+    name: 'Project Management Job Search & Interview Prep',
+    issuer: 'IBM SkillsBuild',
+    year: 2024,
+    logo: 'https://img.shields.io/badge/PM%20Job%20Search%20%26%20Interview%20Prep-052FAD?style=for-the-badge&logo=ibm&logoColor=white',
+    link: 'https://www.credly.com/users/adugnagizaw'
   }
 ];
 

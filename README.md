@@ -88,6 +88,30 @@
 	<a href="https://www.credly.com/users/adugnagizaw" title="Google Business Intelligence" target="_blank" rel="noopener">
 		<img src="https://img.shields.io/badge/Google%20Business%20Intelligence-673AB7?style=for-the-badge&logo=google&logoColor=white" alt="Google Business Intelligence" />
 	</a>
+	<a href="https://www.credly.com/users/adugnagizaw" title="Sage 300 ERP Certified Consultant" target="_blank" rel="noopener">
+		<img src="https://img.shields.io/badge/Sage%20300%20ERP%20Consultant-00A859?style=for-the-badge&logo=sage&logoColor=white" alt="Sage 300 ERP Certified Consultant" />
+	</a>
+	<a href="https://www.credly.com/users/adugnagizaw" title="Applied Data Science Lab" target="_blank" rel="noopener">
+		<img src="https://img.shields.io/badge/Applied%20Data%20Science%20Lab-101820?style=for-the-badge&logo=readme&logoColor=white" alt="Applied Data Science Lab" />
+	</a>
+	<a href="https://www.credly.com/users/adugnagizaw" title="From Relational SQL to MongoDB Document Model" target="_blank" rel="noopener">
+		<img src="https://img.shields.io/badge/MongoDB%20Data%20Model%20Design-47A248?style=for-the-badge&logo=mongodb&logoColor=white" alt="MongoDB Data Model Design" />
+	</a>
+	<a href="https://www.credly.com/users/adugnagizaw" title="Data Analytics Essentials" target="_blank" rel="noopener">
+		<img src="https://img.shields.io/badge/Data%20Analytics%20Essentials-052FAD?style=for-the-badge&logo=ibm&logoColor=white" alt="Data Analytics Essentials" />
+	</a>
+	<a href="https://www.credly.com/users/adugnagizaw" title="Microsoft UX Design Professional Certificate" target="_blank" rel="noopener">
+		<img src="https://img.shields.io/badge/Microsoft%20UX%20Design-0078D4?style=for-the-badge&logo=microsoft&logoColor=white" alt="Microsoft UX Design Professional Certificate" />
+	</a>
+	<a href="https://www.credly.com/users/adugnagizaw" title="Lifelong Learning 2025" target="_blank" rel="noopener">
+		<img src="https://img.shields.io/badge/Lifelong%20Learning%202025-FF6A00?style=for-the-badge&logo=readme&logoColor=white" alt="Lifelong Learning 2025" />
+	</a>
+	<a href="https://www.credly.com/users/adugnagizaw" title="Computer Hardware Basics" target="_blank" rel="noopener">
+		<img src="https://img.shields.io/badge/Computer%20Hardware%20Basics-1BA0D7?style=for-the-badge&logo=cisco&logoColor=white" alt="Computer Hardware Basics" />
+	</a>
+	<a href="https://www.credly.com/users/adugnagizaw" title="Project Management Job Search & Interview Prep" target="_blank" rel="noopener">
+		<img src="https://img.shields.io/badge/PM%20Job%20Search%20%26%20Interview%20Prep-052FAD?style=for-the-badge&logo=ibm&logoColor=white" alt="Project Management Job Search & Interview Prep" />
+	</a>
 </p>
 
 ---
