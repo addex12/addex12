@@ -24,9 +24,23 @@ function App() {
 
   useEffect(() => {
     const storedTheme = window.localStorage.getItem('portfolio-theme');
-    if (storedTheme === 'dark') {
+    const mediaQuery = window.matchMedia?.('(prefers-color-scheme: dark)');
+
+    if (storedTheme) {
+      setDark(storedTheme === 'dark');
+    } else if (mediaQuery?.matches) {
       setDark(true);
     }
+
+    const handleSystemTheme = (event) => {
+      const hasStored = window.localStorage.getItem('portfolio-theme');
+      if (!hasStored) {
+        setDark(event.matches);
+      }
+    };
+
+    mediaQuery?.addEventListener('change', handleSystemTheme);
+    return () => mediaQuery?.removeEventListener('change', handleSystemTheme);
   }, []);
 
   useEffect(() => {
