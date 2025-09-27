@@ -1,4 +1,4 @@
-# Adugna Gizaw — International Portfolio & Open Source Hub
+# Adugna Gizaw — Portfolio & Open Source Hub
 
 [![Portfolio](https://img.shields.io/badge/Portfolio-Live-blue?style=for-the-badge&logo=react)](https://orbalia.pythonanywhere.com)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/eleganceict)
